@@ -1,0 +1,9 @@
+[submodule "test/lib/googletest"]
+	path = test/lib/googletest
+	url = https://github.com/google/googletest
+[submodule "lib/yaml-cpp"]
+	path = lib/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp
+[submodule "lib/qvm"]
+	path = lib/qvm
+	url = https://github.com/yuferovalex/qvm.git

@@ -1,0 +1,11 @@
+description: This is a description of program
+input parameters:
+  - name: firstParameter
+    description: This is a description of the first parameter (scalar)
+  - name: secondParameter
+    description: This is a description of the second parameter (matrix)
+    rows: 2
+    columns: 3
+output parameters:
+  - name: thirdParameter
+    description: This is a description of the third parameter (scalar)

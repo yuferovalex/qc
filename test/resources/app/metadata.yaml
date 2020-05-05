@@ -1,0 +1,13 @@
+description: Calculates 2-nd order matrix product.
+input parameters:
+  - name: a
+    description: a
+  - name: b
+    description: b
+  - name: c
+    description: c
+output parameters:
+  - name: x1
+    description: x1
+  - name: x2
+    description: x2

@@ -1,0 +1,11 @@
+description: Gaussian elimination n=2
+input parameters:
+  - name: A
+    description: A
+    rows: 2
+    columns: 3
+output parameters:
+  - name: X
+    description: X
+    rows: 2
+
