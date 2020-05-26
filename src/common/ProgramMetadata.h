@@ -4,13 +4,13 @@
 #include <vector>
 
 #include "qvm/ParameterMetadata.h"
-#include "utils/LinkedHashMap.h"
+#include "utils/LinkedHashSet.h"
 
 struct ProgramMetadata {
     uint64_t memorySize;
     uint64_t commandsCount;
     std::string description;
-    LinkedHashMap<std::string> strings;
+    LinkedHashSet<std::string> strings;
     std::vector<ParameterMetadata> inputParams;
     std::vector<ParameterMetadata> outputParams;
 };

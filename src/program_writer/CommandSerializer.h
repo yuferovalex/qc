@@ -6,12 +6,12 @@
 #include "qvm/ProgramFile.h"
 #include "common/ExpressionVisitor.h"
 #include "memory_mapper/MemoryMapper.h"
-#include "utils/LinkedHashMap.h"
+#include "utils/LinkedHashSet.h"
 
 template <typename WriteFuncT>
 class CommandSerializer final : public ExpressionVisitor {
 public:
-    CommandSerializer(WriteFuncT &&write, MemoryMapper &memMapper, const LinkedHashMap<std::string> &strings)
+    CommandSerializer(WriteFuncT &&write, MemoryMapper &memMapper, const LinkedHashSet<std::string> &strings)
             : m_write(std::move(write)), m_memMapper(memMapper), m_strings(strings) {}
 
     void visit(Expression &expression) override {
@@ -195,7 +195,7 @@ private:
 
     std::optional<ProgramFileV1::CommandWithHints> m_command;
 
-    const LinkedHashMap<std::string> &m_strings;
+    const LinkedHashSet<std::string> &m_strings;
     WriteFuncT m_write;
     MemoryMapper &m_memMapper;
 };

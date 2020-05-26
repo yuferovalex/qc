@@ -11,7 +11,7 @@
 
 #include "common/Expressions.h"
 #include "det_parser/NodeParser.h"
-#include "utils/LinkedHashMap.h"
+#include "utils/LinkedHashSet.h"
 
 class DeterminantParser {
 public:
@@ -23,7 +23,7 @@ public:
     std::shared_ptr<Expression> parseExpression(std::istream &istream);
     void prepareExpression(const std::shared_ptr<Expression> &expression);
 
-    LinkedHashMap<std::string> strings;
+    LinkedHashSet<std::string> strings;
 };
 
 

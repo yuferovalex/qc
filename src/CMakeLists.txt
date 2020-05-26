@@ -21,7 +21,7 @@ add_library(qc_lib STATIC
         memory_mapper/MemoryMapper.h
         memory_mapper/NaiveMemoryMapper.cpp
         memory_mapper/NaiveMemoryMapper.h
-        program_writer/CommandSerializer.h utils/LinkedHashMap.h)
+        program_writer/CommandSerializer.h utils/LinkedHashSet.h)
 
 target_link_libraries(qc_lib
         ${Boost_LIBRARIES}

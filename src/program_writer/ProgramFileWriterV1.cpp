@@ -56,7 +56,7 @@ void ProgramFileWriterV1::writeParameterMetadata(const ParameterMetadata &metada
     write(metadataMarshaled);
 }
 
-void ProgramFileWriterV1::writeStrings(const LinkedHashMap<std::string> &strings) {
+void ProgramFileWriterV1::writeStrings(const LinkedHashSet<std::string> &strings) {
     size_t bytesWritten = 0;
     for (auto &&pair : strings) {
         auto &&str = pair.second;

@@ -11,7 +11,7 @@
 #include "common/Expressions.h"
 #include "common/ExpressionVisitor.h"
 #include "common/ProgramMetadata.h"
-#include "utils/LinkedHashMap.h"
+#include "utils/LinkedHashSet.h"
 
 class ProgramFileWriterV1 {
 public:
@@ -26,7 +26,7 @@ private:
 
     void writeParameterMetadata(const ParameterMetadata &metadata);
 
-    void writeStrings(const LinkedHashMap<std::string> &map);
+    void writeStrings(const LinkedHashSet<std::string> &map);
 
     template<typename T>
     void write(T &&value) {

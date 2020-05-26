@@ -1,12 +1,12 @@
-#ifndef QC_LINKEDHASHMAP_H
-#define QC_LINKEDHASHMAP_H
+#ifndef QC_LINKEDHASHSET_H
+#define QC_LINKEDHASHSET_H
 
 #include <cstdint>
 #include <vector>
 #include <unordered_map>
 
 template <typename T>
-class LinkedHashMap {
+class LinkedHashSet {
 public:
     typedef T value_type;
     typedef uint32_t index_type;
@@ -45,4 +45,4 @@ private:
     std::unordered_map<value_type, iterator_type> m_map;
 };
 
-#endif //QC_LINKEDHASHMAP_H
+#endif //QC_LINKEDHASHSET_H
