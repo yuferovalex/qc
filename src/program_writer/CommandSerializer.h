@@ -157,6 +157,7 @@ public:
         if (auto literal = std::dynamic_pointer_cast<Literal>(term.expression())) {
             m_command->rhsOperand.value.number = literal->value();
         } else if (auto halt = std::dynamic_pointer_cast<HaltExpression>(term.expression())) {
+            m_command->operation |= Command::Flags::HALT_IF_TRUE;
             m_command->rhsOperand.value.stringIndex = m_strings.indexOf(halt->reason());
         } else {
             m_command->operation |= Command::Flags::RHS_OP_REF;

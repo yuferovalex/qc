@@ -65,9 +65,30 @@ std::shared_ptr<NodeParser> findNodeParser(const boost::property_tree::ptree &ro
     throw std::runtime_error("unknown token given");
 }
 
+std::shared_ptr<Expression> tryParseTerminal(std::istream &istream) {
+    std::string string;
+    std::getline(istream, string);
+    if (Details::isIdentifier(string)) {
+        auto id = Details::parseIdentifier(string);
+        return std::make_shared<Variable>(id.name, id.row, id.col);
+    }
+    try {
+        return std::make_shared<Literal>(std::stod(string));
+    } catch (std::exception &) {
+        return nullptr;
+    }
+}
+
 std::shared_ptr<Expression> DeterminantParser::parseExpression(std::istream &istream) {
     boost::property_tree::ptree tree;
-    boost::property_tree::read_json(istream, tree);
+    try {
+        boost::property_tree::read_json(istream, tree);
+    } catch (std::exception &e) {
+        if (auto terminal = tryParseTerminal(istream)) {
+            return terminal;
+        }
+        throw e;
+    }
 
     std::stack<std::shared_ptr<NodeParser>> stack;
     stack.push(findNodeParser(tree));
